@@ -1,0 +1,163 @@
+body{
+    color: #f5f5f5;
+    background-color: #5f5f5f;
+}
+
+a {
+    color: #338aff;
+}
+
+.space {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn1 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    background: none;
+    border: none;
+    padding: 12px 18px;
+    position: relative;
+}
+
+.btn1:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(calc(100% + 4px));
+    width: 45px;
+    height: 45px;
+    background: #dc143c;
+    border-radius: 50px;
+    transition: transform .25s .25s cubic-bezier (0, 0, .5, 2);
+    z-index: -1;
+}
+
+.btn1:hover::before {
+    width: 100%;
+    transform: translateY(-50%) translateX(-18px);
+    transition: transform .25s cubic-bezier(0, 0, .5, 2);
+}
+
+.btn1 i {
+    margin-left: 5px;
+    transition: transform .25s .4s cubic-bezier(0, 0, .5, 2);
+}
+
+.btn1:hover i {
+    transform: translateX(3px);
+}
+
+.btn2 {
+    cursor: pointer;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(-45deg, #9925ea, #338aff, #9925ea);
+    background-size: 400%;
+    background-position: 90% 0;
+    color: #FFF;
+    transition: background 0.8s;
+    border: 0;
+}
+
+.btn2:hover {
+    background-position: 185% 50%;
+}
+
+.btn3 {
+    cursor: pointer;
+    position: relative;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #16b081;
+    color: #fff;
+    transition: all .3s;
+    border: 0;
+}
+
+.btn3:hover {
+    background: transparent;
+    letter-spacing: 2px;
+}
+
+.btn3::before {top: 0;}
+
+.btn3::after {bottom: 0;}
+
+.btn3:hover::before, .btn3:hover::after {
+    transform: scaleX(1);
+}
+
+.btn3::before, .btn3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    width: 100%;
+    height: 0.5px;
+    background: white;
+    transition: all .3s;
+}
+
+.btn4 {
+    cursor: pointer;
+    height: 3.rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.375rem;
+    background: #4503dc;
+    color: #fff;
+    box-shadow: 0 0.4rem 0 0 #3700b8;
+    letter-spacing: 3px;
+    transition: all .3s;
+    border: 0;
+}
+
+.btn4:active {
+    transform: translateY(0.3rem);
+    box-shadow: 0 0.2rem 0 0 #3700b8;
+}
+
+.btn5 {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d384e;
+    background-size: 400%;
+    color: #fff;
+    border: 0;
+}
+
+.btn5:hover::before {
+    transform: scaleX(1);
+}
+
+.btn5-content {
+    position: relative;
+    z-index: 1;
+}
+
+.btn5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+        83.2deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+}
+
