@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
 body{
     color: #f5f5f5;
     background-color: #5f5f5f;
@@ -10,6 +16,23 @@ a {
 .space {
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #5f5f5f;
+}
+
+.container{
+    display: flex;
+}
+
+.coluna{
+    margin-right: 50px;
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 
+        0 0 25px #5ddcff,
+        0 0 50px #4e00c2;
+    }
 }
 
 .btn1 {
@@ -105,9 +128,10 @@ a {
 }
 
 .btn4 {
+    margin-left: 10px;
     cursor: pointer;
     height: 3.rem;
-    padding: 1.5rem 1.5rem;
+    padding: .75rem .75rem;
     border-radius: 0.375rem;
     background: #4503dc;
     color: #fff;
@@ -124,6 +148,7 @@ a {
 
 .btn5 {
     position: relative;
+    cursor: pointer;
     overflow: hidden;
     height: 3rem;
     padding: 0 2rem;
@@ -161,3 +186,92 @@ a {
     transition: all 0.475s;
 }
 
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked + .ball {
+    transform: translate(29px, -50%);
+}
+
+.toggler {
+    display: block;
+    width: 60px;
+    height: 31px;
+    border: 2px solid #f5f5f5;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ball, .sun, .moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+}
+.ball {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    left: 1px;
+    z-index: 10;
+    transition: transform .5s ease-in-out;
+}
+
+.sun {
+    left: 5px;
+}
+
+.moon {
+    right: 5px;
+}
+
+.btn6 {
+    text-decoration: none;
+    color: #1fe8b6;
+    padding: 5px 20px;
+    border: 3px solid #1fe8b6;
+    position: relative;
+    background-color: transparent;
+}
+
+.btn6::before, .btn6::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: all .5s;
+}
+
+.btn6::before {
+    top: -15px;
+    left: -15px;
+    border-width: 3px 0 0 3px;
+}
+
+.btn6::after {
+    bottom: -15px;
+    right: -15px;
+    border-width: 0 3px 3px 0;
+}
+
+.btn6:hover::before, .btn6:hover::after {
+    width: calc(100% + 27px);
+    height: calc(100% + 27px);
+}
+
+.btn7 {
+    display: inline-block;
+    color: #FFF;
+    padding: 5px 20px;
+    border: 3px solid #3c67e3;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.btn7:hover {
+    animation: pulsate 1.2s ease-in-out;
+}
